@@ -58,19 +58,26 @@ public class MPImage {
 	public Image getImage() {
 		return image;
 	}
-	public HashMap<String,Object> getExifTagsForDate() {
+	public HashMap<String,Object> getExifTagsNameInfoRelatedDate() {
 		HashMap<String,Object> retval = new HashMap<>();
 		exifTags.entrySet()
 				.stream()
-				.filter(e->dateTagName.containsKey(e.getKey())
-							||gpsTagName.containsKey(e.getKey()))
-				.map(e -> Map.entry(dateTagName.containsKey(e.getKey())?
-						dateTagName.get(e.getKey()):gpsTagName.get(e.getKey()),
-						e.getValue()))
+				.filter(e->dateTagName.containsKey(e.getKey()))
+				.map(e -> Map.entry(dateTagName.get(e.getKey()), e.getValue()))
 				.forEach(e->retval.put(e.getKey(),e.getValue()));
 		if(gpsTags.containsKey(29)) {
 			retval.put(gpsTagName.get(29), gpsTags.get(29));
 		}
 		return retval;
+	}
+	public HashMap<Integer,Object> getExifTagsRelatedDate() {
+		HashMap<Integer,Object> retval = new HashMap<>();
+		exifTags.entrySet().stream().filter(e -> dateTagName.containsKey(e.getKey()))
+				.forEach(e -> retval.put(e.getKey(), e.getValue()));
+		if (gpsTags.containsKey(29)) {
+			retval.put(29,gpsTags.get(29));
+		}
+		return retval;
+	
 	}
 }

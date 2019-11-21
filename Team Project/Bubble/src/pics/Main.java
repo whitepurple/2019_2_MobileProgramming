@@ -7,7 +7,7 @@ public class Main {
 		System.out.println("asd");
 		MPImage img1 = new MPImage("C:\\Users\\user\\Desktop\\pics\\IMG_2776.JPG");
 		
-		img1.getExifTagsForDate()
+		img1.getExifTagsNameInfoRelatedDate()
 						.entrySet()
 						.stream()
 						.sorted((i,j)->i.getKey().compareTo(j.getKey()))
