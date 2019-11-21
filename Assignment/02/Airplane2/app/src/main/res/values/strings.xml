@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Airplane</string>
+    <string name="destination">Korea -> USA</string>
+    <string name="grade_seat">좌석등급</string>
+    <string name="grade_first">First</string>
+    <string name="grade_business">Business</string>
+    <string name="grade_economy">Economy</string>
+    <string name="food_airplane">기내식</string>
+    <string name="food_korean">Korean</string>
+    <string name="food_western">Western</string>
+    <string name="food_Chinese">Chinese</string>
+    <string name="seat_location">좌석위치</string>
+    <string name="seat_aisle">Aisle seat</string>
+    <string name="seat_window">Window seat</string>
+    <string name="num_of_people">Number of people</string>
+    <string name="total"> TOTAL </string>
+    <string name="init_num">1</string>
+    <string name="init_total">0</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+</resources>

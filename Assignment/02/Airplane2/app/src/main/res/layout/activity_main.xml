@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!-- 최외곽 LinearLayout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 행선지 TextView -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/destination"
+            android:textSize="30sp"
+            android:layout_margin="15dp"/>
+
+        <!-- 좌석 등급 선택 TextView, RadioGroup, RadioButton -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grade_seat"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- onClick 메소드를 사용하여 이벤트 처리 -->
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade_first"
+                android:text="@string/grade_first"
+                android:onClick="onClick"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="15dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade_business"
+                android:text="@string/grade_business"
+                android:onClick="onClick"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="15dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade_economy"
+                android:text="@string/grade_economy"
+                android:onClick="onClick"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="15dp"/>
+        </RadioGroup>
+
+        <!-- 기내식 유무 TextView, CheckBox -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food_airplane"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/food_korean"
+                android:text="@string/food_korean"
+                android:onClick="onClick"
+                android:textSize="18sp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/food_western"
+                android:text="@string/food_western"
+                android:onClick="onClick"
+                android:textSize="18sp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/food_Chinese"
+                android:text="@string/food_Chinese"
+                android:onClick="onClick"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <!-- 기내식 유무 TextView, RadioGroup, RadioButton -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seat_location"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seat_aisle"
+                android:text="@string/seat_aisle"
+                android:onClick="onClick"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="30dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seat_window"
+                android:text="@string/seat_window"
+                android:onClick="onClick"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="30dp"/>
+        </RadioGroup>
+
+        <!-- 인원 수 TextView, EditText, Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/num_of_people"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="40dp"/>
+            <!-- 인원 수 입력 최대 2자리 수 까지 입력 -->
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/numOfPeople"
+                android:text="@string/init_num"
+                android:inputType="number"
+                android:maxLength="2"/>
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:id="@+id/plus"
+                android:text="@string/plus"
+                android:onClick="onClick"/>
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:id="@+id/minus"
+                android:text="@string/minus"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <!-- 총 금액 표시 TextView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:layout_marginRight="30dp"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_price"
+                android:text="@string/init_total"
+                android:textColor="#000000"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/image"
+            android:layout_marginVertical="15dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
